@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="backgroound.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                    $("body").css("background-color",'#' + Math.floor(Math.random()*16777215).toString(16));
+            });
+            $("body").css("background-color",'#' + Math.floor(Math.random()*16777215).toString(16));
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <button id="btn">Change Color</button>
+    </center>    
+</body>
+</html>

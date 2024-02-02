@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .ball{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+   $(document).ready(function(){
+        var Size = 200;
+        var Index =0;
+        var colors = ['red', 'green', 'blue'];
+        $('#boll').click(function(){
+            Index=(Index+1)%3
+            Size+=10;
+            if(Size>420){
+                Size =200;
+                Index =0;
+            }
+            console.log(Size);
+            $('#boll').css("width",Size+'px');
+            $('#boll').css("height",Size+'px');
+            $('#boll').css("background-color",String(colors[Index]));
+        });
+        $('#boll').mouseleave(function(){
+            Index=Math.abs((1-Index-3))%3;
+            Size -=5;
+            if(Size<200){
+                Size=200;
+            }
+            console.log(Size);
+            $('#boll').css("width",Size+'px');
+            $('#boll').css("height",Size+'px');
+            $('#boll').css("background-color",String(colors[Index]));
+        });
+   });
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="boll" class="ball" ></div> 
+</body>
+</html>

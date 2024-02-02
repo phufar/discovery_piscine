@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .ball{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+</style>
+<script>
+    var ball = document.querySelector('.ball');
+    var Size = 200;
+    var Index = 0;
+    var colors = ['red', 'green', 'blue'];
+    function expandbloon() {
+        Index = (Index+1)%3;
+        Size += 10;
+        if (Size > 420) {
+            Size = 200;
+            Index = 0;
+        }
+        console.log(Size);
+        update();
+        document.getElementById("boxbox").style.backgroundColor = colors[Index];
+    }
+    function shrinkbloon(){
+        Index=Math.abs((1-Index-3))%3;
+        Size -=5;
+        if(Size<200){
+            Size=200;
+        }   
+        update();
+        document.getElementById("boxbox").style.backgroundColor = colors[Index];
+    }
+    function update(){
+        document.getElementById("boxbox").style.width = Size+'px';
+        document.getElementById("boxbox").style.height = Size+'px';
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="boxbox" class="ball" onclick="expandbloon()" onmouseleave="shrinkbloon()"></div> 
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #EEEDEB;
+        }
+        .container {
+            width: 400px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        p {
+            margin: 4px 0;
+        }
+
+        .container * {
+            border-radius: 8px;
+        }
+
+        button {
+            border: 1px black solid;
+            background-color: #747264;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(236, 236, 236);
+        }
+
+        #new {
+            background-color: rgb(145, 132, 106);
+            width: 100%;
+            height: 40px;
+        }
+
+        #tf_list {
+            border: 1px black solid;
+            padding: 16px 12px;
+            height: 500px;
+            margin-top: 10px;
+            background-color: #E0CCBE;
+        }
+
+        #tf_list .todo {
+            border: 1px black solid;
+            padding: 0px;
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <center>    
+            <h1>Todo List</h1>
+        </center>
+        <button id="new" onclick="newTodo()">New</button>
+        <div id="tf_list"></div>
+    </div>
+    <script src="./todo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function start(){
+        let first = Number(document.getElementById("first").value);
+        let operator = (document.getElementById("operator").value);
+        let second = Number(document.getElementById("second").value);
+        if((operator=='/'||operator=='%')&&second==0){
+            alert("It's over 9000!");
+            console.log("It's over 9000!")
+        }else if(first>=0&&second>=0){
+            if(operator=='+'){
+                alert(first+second);
+                console.log(first+second);
+            }else if(operator=='-'){
+                alert(first-second);
+                console.log(first-second);
+            }else if(operator=='*'){
+                alert(first*second);
+                console.log(first*second);
+            }else if(operator=='/'){
+                alert(Number(first)/Number(second));
+                console.log(Number(first)/Number(second));
+            }else if(operator=='%'){
+                alert(first%second);
+                console.log(first%second);
+            }
+        }else{
+            alert("Error :(");
+        }
+
+    }
+    function reset(){
+        document.getElementById("first").reset();
+        document.getElementById("operator").reset();
+        document.getElementById("second").reset();
+    }
+    function useme(){
+        alert("Please, use me...");
+    }
+    setInterval(function(){useme()}, 30000);
+</script>
+<body>
+    <div>
+        <label>
+            1st positive integer:
+        </label>
+        <input id="first" name="first">
+           
+        </input>
+    </div>
+    <div>
+        <label>
+            Operator:
+        </label>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+          </select>
+            
+        </input>
+    </div>
+    <div>
+        <label>
+            2st positive integer:
+        </label>
+        <input id="second"name="second">      
+        </input>
+    </div>
+    <button id="summit" name ="summit" onclick="start(),reset()">Try me!</button>
+</body>
+</html>
