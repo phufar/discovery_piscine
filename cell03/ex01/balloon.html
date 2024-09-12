@@ -38,6 +38,9 @@
         document.getElementById("boxbox").style.width = Size+'px';
         document.getElementById("boxbox").style.height = Size+'px';
     }
+    function loop(){
+        setInterval(function(){expandbloon()},3);
+    }
 </script>
 <head>
     <meta charset="UTF-8">
@@ -45,6 +48,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="boxbox" class="ball" onclick="expandbloon()" onmouseleave="shrinkbloon()"></div> 
+    <div id="boxbox" class="ball" onclick="loop()" onmouseleave="shrinkbloon()"></div> 
 </body>
 </html>

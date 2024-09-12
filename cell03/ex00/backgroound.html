@@ -5,10 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function random(){
+            i=0;
+            setInterval(function(){
+                i=Number(i)+1;
+                if(i>16777215){
+                    i=0
+                }
+                rand(i)
+            },30);
+        }
+        function rand(){
+            document.body.style.backgroundColor='#' + Math.floor(5000+i).toString(16);
+            console.log(Math.floor(0+i).toString(16));
+        }
+    </script>
 </head>
-<body>
-    <center>
-        <button onclick="document.body.style.backgroundColor='#' + Math.floor(Math.random()*16777215).toString(16);">Change Color</button>
-    </center>    
+<body>   
+    <button class="btn" onclick="random()">k</button>
 </body>
 </html>
